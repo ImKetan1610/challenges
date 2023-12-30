@@ -23,3 +23,9 @@
 # Website Images:
   1. App in Large Screen
   ![App in large screen](./assets/1.jpg)
+
+  2. After Clicking on the + button  
+  ![after clicking on the + button](./assets/2.jpg)
+
+  3. Responsive Design
+  ![Responsive Design](./assets/3.jpg)
