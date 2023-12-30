@@ -30,4 +30,4 @@
   3. Responsive Design
   ![Responsive Design](./assets/3.jpg)
 
-### Live link
+### Live link(https://basic-accordion1.netlify.app/)
