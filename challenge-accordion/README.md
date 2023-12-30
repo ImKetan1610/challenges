@@ -21,4 +21,5 @@
   - Within the React component, the font is styled with an italic emphasis (font-style: italic;) to provide a distinct visual style.
 
 # Website Images:
-  1. ![App in large screen](./assets/1.jpg)
+  1. App in Large Screen
+  ![App in large screen](./assets/1.jpg)
