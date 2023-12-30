@@ -1,2 +1,4 @@
 # Accordion 
 - In our React application, we've implemented a sleek and interactive accordion component using React for dynamic content display. The accordion is styled using CSS to ensure a clean and visually appealing design.
+
+* Key features:
