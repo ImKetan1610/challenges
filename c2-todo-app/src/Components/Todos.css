@@ -1,0 +1,13 @@
+.todos {
+  display: flex;
+  width: 50%;
+  margin: auto;
+  margin-top: 1rem;
+  border: 1px solid;
+  padding: 5px;
+  font-size: larger;
+}
+.check {
+  width: 1.5rem;
+  margin-right: 1rem;
+}

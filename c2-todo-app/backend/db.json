@@ -1,10 +1,19 @@
 {
-  "posts": [
+  "data": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "todo": "learn",
+      "checked": true,
+      "id": 1
+    },
+    {
+      "todo": "eat",
+      "checked": false,
+      "id": 2
+    },
+    {
+      "todo": "repeat",
+      "checked": false,
+      "id": 3
     }
-  ],
-  "data": []
+  ]
 }
