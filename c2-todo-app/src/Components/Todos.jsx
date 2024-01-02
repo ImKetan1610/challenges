@@ -12,7 +12,7 @@ const Todos = ({ data, onCheckboxChange }) => {
         checked={checked}
         onChange={() => onCheckboxChange(id)}
       />
-      <h3>{todo}</h3>
+      <p>{todo}</p>
     </div>
   );
 };

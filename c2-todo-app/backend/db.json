@@ -1,18 +1,18 @@
 {
   "data": [
     {
+      "checked": false,
       "todo": "learn",
-      "checked": true,
       "id": 1
     },
     {
-      "todo": "eat",
       "checked": false,
+      "todo": "eat",
       "id": 2
     },
     {
-      "todo": "repeat",
       "checked": false,
+      "todo": "repeat",
       "id": 3
     }
   ]
