@@ -41,6 +41,7 @@ function App() {
       let res = await axios.post("http://localhost:3001/data", todoData);
       // clear the input field
       setTodoData({ todo: "", checked: false });
+      getTodoArray();
     } catch (error) {
       console.log("Error: ", error);
     }
