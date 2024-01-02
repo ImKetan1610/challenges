@@ -5,7 +5,7 @@ import axios from "axios";
 
 function App() {
   const [todoArray, setTodoArray] = useState([]);
-  const [todoData, setTodoData] = useState({ todo: "", checked: false });
+  const [todoData, setTodoData] = useState({ todo: "", checked: false, complete: false });
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -59,7 +59,8 @@ function App() {
     }
   };
 
-  console.log(todoArray);
+  const deleteTodos = async () => {};
+  const markCompleteTodos = async () => {};
 
   return (
     <div className="App">
@@ -71,8 +72,8 @@ function App() {
         </button>
       </div>
       <div className="btn">
-        <button>Delete Marked</button>
-        <button>Complete Marked</button>
+        <button onClick={deleteTodos}>Delete Marked</button>
+        <button onClick={markCompleteTodos}>Complete Marked</button>
       </div>
       {todoArray &&
         todoArray.map((todo) => (
