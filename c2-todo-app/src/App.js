@@ -27,8 +27,8 @@ function App() {
 
       // Send a request to update the checked status on the server
       await axios.put(`http://localhost:3001/data/${id}`, {
+        ...todoToUpdate,
         checked: !todoToUpdate.checked,
-        todo: todoToUpdate.todo,
       });
     } catch (error) {
       console.error("Error updating checkbox: ", error);
