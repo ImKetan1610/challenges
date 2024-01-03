@@ -1,19 +1,28 @@
 {
   "data": [
     {
-      "checked": false,
+      "id": 1,
       "todo": "learn",
-      "id": 1
+      "complete": false,
+      "checked": false
     },
     {
-      "checked": true,
+      "id": 2,
       "todo": "eat",
-      "id": 2
+      "complete": true,
+      "checked": true
     },
     {
-      "checked": false,
+      "id": 3,
       "todo": "repeat",
-      "id": 3
+      "checked": false,
+      "complete": false
+    },
+    {
+      "todo": "plolp",
+      "checked": false,
+      "complete": false,
+      "id": 4
     }
   ]
 }

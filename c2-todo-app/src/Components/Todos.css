@@ -1,12 +1,28 @@
+
 .todos {
   display: flex;
-  width: 50%;
+  /* width: 50%; */
   margin: auto;
   margin-top: 1rem;
-  border: 1px solid;
+  font-size: larger;
+  background-color: aliceblue;
+  padding: 0 5px;
+  border-radius: 5px;
+}
+.todos > div {
+  display: flex;
+  height: 100%;
+  width: 100%;
   font-size: larger;
 }
 .check {
   width: 1.5rem;
   margin-right: 1rem;
+}
+.btn {
+  display: flex;
+  margin: auto;
+  margin-top: 20px;
+  width: 100%;
+  justify-content: space-around;
 }
