@@ -11,7 +11,6 @@ const Todos = ({ data, onCheckboxChange }) => {
           className="check"
           type="checkbox"
           checked={checked}
-          disabled={complete}
           onChange={() => onCheckboxChange(id)}
         />
         <p style={{ marginRight: "25%" }}>{todo}</p>
