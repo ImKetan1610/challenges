@@ -1,0 +1,47 @@
+#comment-box {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 8px;
+  max-width: 350px;
+}
+
+.btn-box {
+  display: flex;
+  align-items: center;
+}
+
+.btn-box button {
+  padding: 5px 10px;
+  margin: 0 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.inputBox {
+  margin-top: 10px;
+}
+
+.inputBox textarea {
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.inputBox button {
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+}
+
+.inputBox button:hover {
+  background-color: #45a049;
+}
