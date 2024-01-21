@@ -4,7 +4,7 @@ import CommentBox from './Components/CommentBox';
 function App() {
   return (
     <div className="App">
-      <CommentBox />
+      <CommentBox text="something" />
     </div>
   );
 }

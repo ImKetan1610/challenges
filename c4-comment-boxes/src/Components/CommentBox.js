@@ -78,7 +78,7 @@
 import React, { useState } from "react";
 import "./CommentBox.css";
 
-const CommentBox = () => {
+const CommentBox = ({text}) => {
   const [count, setCount] = useState(0);
   const [comments, setComments] = useState([]);
   const [commentText, setCommentText] = useState("");
@@ -112,6 +112,9 @@ const CommentBox = () => {
 
   return (
     <div id="comment-box">
+      {text &&
+      <CommentBox/>
+      }
       <div className="btn-box">
         <button onClick={() => handleCount(1)}>+</button>
         <p>{count}</p>
