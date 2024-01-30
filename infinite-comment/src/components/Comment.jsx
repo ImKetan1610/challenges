@@ -5,25 +5,29 @@ const Comment = ({ comment }) => {
   const [input, setInput] = useState("");
   const onAddComment = () => {};
   return (
-    <div>
+    <div className="comment-container">
       {comment.id === 1 ? (
-        <div>
+        <div className="comment-input-container">
           <input
             type="text"
-            className="commentInput"
+            className="comment-input"
             autoFocus
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="type a comment here"
           />
-          <div className="replyBtn" onClick={onAddComment}>
+          <div className="reply-btn" onClick={onAddComment}>
             Add Comment
           </div>
         </div>
       ) : (
-        <span>{comment.name}</span>
+        <div className="child-comment-container">
+          <span>{comment.count}</span>
+          <br />
+          <span>{comment.name}</span>
+        </div>
       )}
-      
+
       {comment?.items?.map((ele) => {
         return <Comment key={ele.id} comment={ele} />;
       })}
