@@ -2,16 +2,39 @@ import React from "react";
 import { useState, useRef, useEffect } from "react";
 import ButtonComponent from "./ButtonComponent";
 
-const Comment = ({ comment }) => {
+const Comment = ({
+  comment,
+  handleInsertNode,
+  handleUpdateNode,
+  handleDeleteNode,
+}) => {
   const [input, setInput] = useState("");
   const [isEdit, setIsEdit] = useState(false);
   const [showInput, setShowInput] = useState(false);
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    inputRef?.current?.focus();
+  }, [isEdit]);
 
   const handleNewComment = () => {
     setShowInput(true);
   };
 
-  const onAddComment = () => {};
+  const onAddComment = () => {
+    if (isEdit) {
+      handleUpdateNode(comment.id, inputRef?.current?.innerText);
+    } else {
+      handleInsertNode(comment.id, input);
+      setShowInput(false);
+      setInput("");
+    }
+    if (isEdit) setIsEdit(false);
+  };
+
+  const handleDelete = () => {
+    handleDeleteNode(comment.id);
+  };
 
   return (
     <div className="comment-container">
@@ -35,15 +58,27 @@ const Comment = ({ comment }) => {
         <div className="child-comment-container">
           <span>{comment.count}</span>
           <br />
-          <span>{comment.name}</span>
+          <span
+            contentEditable={isEdit}
+            suppressContentEditableWarning={isEdit}
+            ref={inputRef}
+          >
+            {comment.name}
+          </span>
           <div style={{ display: "flex", marginTop: "5px" }}>
             {isEdit ? (
               <>
-                <ButtonComponent className={"save"} type={"Save"} />
+                <ButtonComponent
+                  className={"save"}
+                  type={"Save"}
+                  handleClick={onAddComment}
+                />
                 <ButtonComponent
                   className={"cancel"}
                   type={"Cancel"}
                   handleClick={() => {
+                    if (inputRef.current)
+                      inputRef.current.innerText = comment.name;
                     setIsEdit(!isEdit);
                   }}
                 />
@@ -62,7 +97,11 @@ const Comment = ({ comment }) => {
                     setIsEdit(!isEdit);
                   }}
                 />
-                <ButtonComponent className={"delete"} type={"Delete"} />
+                <ButtonComponent
+                  className={"delete"}
+                  type={"Delete"}
+                  handleClick={handleDelete}
+                />
               </>
             )}
           </div>
@@ -80,7 +119,11 @@ const Comment = ({ comment }) => {
               onChange={(e) => setInput(e.target.value)}
               placeholder="type a comment here"
             />
-            <ButtonComponent className="reply-btn" type={"Add Comment"} />
+            <ButtonComponent
+              className="reply-btn"
+              type={"Add Comment"}
+              handleClick={onAddComment}
+            />
             <ButtonComponent
               className="reply-btn"
               type={"Cancel"}
@@ -91,7 +134,15 @@ const Comment = ({ comment }) => {
           </div>
         )}
         {comment?.items?.map((ele) => {
-          return <Comment key={ele.id} comment={ele} />;
+          return (
+            <Comment
+              key={ele.id}
+              comment={ele}
+              handleInsertNode={handleInsertNode}
+              handleUpdateNode={handleUpdateNode}
+              handleDeleteNode={handleDeleteNode}
+            />
+          );
         })}
       </div>
     </div>
